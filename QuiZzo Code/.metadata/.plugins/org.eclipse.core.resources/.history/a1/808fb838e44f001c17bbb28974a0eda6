@@ -1,0 +1,48 @@
+package QuiZzoInc;
+
+import java.util.ArrayList;
+
+public class Pergunta  {
+	private String idPergunta;
+	private String enunciado;
+	private ArrayList<Alternativa> alternativas; 
+	
+	
+/*-----------------------------------------------------METODO CONSTRUTOR INICIO------------------------------------------------------------------------------------------------------------------*/
+	public Pergunta() {
+		
+	}
+	
+	
+/*-----------------------------------------------------METODO CONSTRUTOR FIM---------------------------------------------------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------METODOS GET INICIO------------------------------------------------------------------------------------------------------------------------*/
+	public String getIdPergunta() {
+		return this.idPergunta;
+	}
+	
+	public String getEnunciado() {
+		return this.enunciado;
+	}
+	
+	public ArrayList<Alternativa> getAlternativa() {
+		return this.alternativas;
+	}
+	
+	
+	
+/*-----------------------------------------------------METODOS SET INICIO------------------------------------------------------------------------------------------------------------------------*/
+	public void setIdPergunta(String idPergunta) {
+		this.idPergunta = idPergunta;
+	}
+	
+	public void setEnunciado(String Enunciado) {
+		this.enunciado = enunciado;
+	}
+	
+	@Override
+	public String toString() {
+		return "Pergunta " + this.enunciado;
+	}
+
+}

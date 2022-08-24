@@ -1,0 +1,16 @@
+package QuiZzoInc;
+
+public enum Habilidades {
+	
+	
+	eliminarAlternativa, adicionarTempo, retirarTempo, roubarVida, trocarPergunta;
+/*-----------------------------------------------------METODO INICIO-----------------------------------------------------------------------------------------------------------------------------*/
+	private void eliminarAlternativa() {		
+		//SELECIONA ALEATORIAMENTE UMA ALTERNATIVA ERRADA PARA SER ELIMINADA
+		
+	}
+	
+	private void adicionarTempo() {
+		
+	}
+}

@@ -1,0 +1,40 @@
+package QuiZzoInc;
+
+import java.util.ArrayList;
+
+public class MenuInicial {
+	
+	private String idMenuInicial;
+	private ArrayList<String> botaoMenu;
+    
+    
+    public void MenuInicial(String idMenuIncial, ArrayList<String> botaoMenu) {
+    	this.idMenuInicial = idMenuInicial;    	
+    }
+    
+    public void BotaoMenu(ArrayList<String> botaoMenu) {
+    	this.botaoMenu = botaoMenu;
+    }
+
+	public String getIdMenuInicial() {
+		return idMenuInicial;
+	}
+
+	public void setIdMenuInicial(String idMenuInicial) {
+		this.idMenuInicial = idMenuInicial;
+	}
+
+	public ArrayList<String> getBotaoMenu() {
+		return botaoMenu;
+	}
+
+	public void setBotaoMenu(ArrayList<String> botaoMenu) {
+		this.botaoMenu = botaoMenu;
+	}
+    
+    
+    
+    
+
+    
+}

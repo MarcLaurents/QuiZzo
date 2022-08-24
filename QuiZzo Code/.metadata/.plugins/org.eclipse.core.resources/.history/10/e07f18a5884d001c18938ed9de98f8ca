@@ -1,0 +1,64 @@
+package QuiZzoInc;
+
+public class Alternativa {
+	private String idAlternativa;
+	private String[][] alternativas = {
+										{"A","AA","AAA","AAAA"},
+										{"A","AA","AAA","AAAA"},
+										{"A","AA","AAA","AAAA"},
+										{"A","AA","AAA","AAAA"},
+										{"A","AA","AAA","AAAA"},
+									  };
+	private char[] respostas =          {
+										'A',
+										'B',
+										'C',
+										'A',
+										'D',
+									  };
+	
+	
+/*--------------------------------------------------DECLARATION----------------------------------------------------*/
+	char tentativa;
+	char resposta;
+	int index;
+	int tentativaCorreta;
+	int totalQuestoes = 
+	
+/*-----------------------------------------------------METODO CONSTRUTOR INICIO------------------------------------------------------------------------------------------------------------------*/
+	public Alternativa() {
+		
+	}
+	
+/*-----------------------------------------------------METODOS GET INICIO------------------------------------------------------------------------------------------------------------------------*/
+
+	public String getIdAlternativa() {
+		return idAlternativa;
+	}	
+
+	public String getEnunciado() { // ENUNCIADOS SALVOS NO BANCO DE DADOS
+		return enunciado;
+	}	
+
+	public StatusAlternativa getStatusAlternativa() {
+		return statusAlternativa;
+	}
+	
+	public String getIdPergunta() { // PERGUNTAS SALVAS NO BANCO DE DADOS
+		return getIdPergunta();
+	}	
+	
+/*-----------------------------------------------------METODOS SET INICIO------------------------------------------------------------------------------------------------------------------------*/
+	
+	public void setIdAlternativa(String idAlternativa) {
+		this.idAlternativa = idAlternativa;
+	}
+	
+	public void setEnunciado(String enunciado) {
+		this.enunciado = enunciado;
+	}
+	
+	public void setStatusAlternativa(StatusAlternativa statusAlternativa) {
+		this.statusAlternativa = statusAlternativa;
+	}
+}

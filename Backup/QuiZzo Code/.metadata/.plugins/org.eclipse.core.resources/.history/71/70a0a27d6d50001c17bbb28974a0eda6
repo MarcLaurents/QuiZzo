@@ -1,0 +1,22 @@
+package QuiZzoInc;
+
+import java.util.ArrayList;
+
+public class MenuInicial {
+	
+    private ArrayList<String> escolhasMenuIncial;   
+    
+    private void MenuInicial(ArrayList<String> escolhasMenuIncial) {
+    	this.escolhasMenuIncial = escolhasMenuIncial;    	
+    }
+
+	public ArrayList<String> getEscolhasMenuIncial() {
+		return escolhasMenuIncial;
+	}
+
+	public void setEscolhasMenuIncial(ArrayList<String> escolhasMenuIncial) {
+		this.escolhasMenuIncial = escolhasMenuIncial;
+	}
+
+    
+}

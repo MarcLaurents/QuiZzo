@@ -1,0 +1,59 @@
+package QuiZzoInc;
+
+public class Alternativa {
+	private String idAlternativa;
+	private String[][] alternativas = {
+										{"A","AA","AAA","AAAA"},
+										{"A","AA","AAA","AAAA"},
+										{"A","AA","AAA","AAAA"},
+										{"A","AA","AAA","AAAA"},
+										{"A","AA","AAA","AAAA"},
+									  };
+	private char[] answers =          {
+										'A',
+										'B',
+										'C',
+										'A',
+										'D',
+									  };
+	private StatusAlternativa statusAlternativa; // DEPENDE DA CLASSE ENUM StatusAlternativa
+	
+/*-----------------------------------------------------METODO CONSTRUTOR INICIO------------------------------------------------------------------------------------------------------------------*/
+	Alternativa(String idAlternativa, String enunciado, StatusAlternativa statusAlternativa) {
+		this.idAlternativa = idAlternativa;
+		this.enunciado = enunciado;
+		this.statusAlternativa = statusAlternativa; // DEPENDE DA CLASSE ENUM StatusAlternativa
+	}
+	
+/*-----------------------------------------------------METODOS GET INICIO------------------------------------------------------------------------------------------------------------------------*/
+
+	public String getIdAlternativa() {
+		return idAlternativa;
+	}	
+
+	public String getEnunciado() { // ENUNCIADOS SALVOS NO BANCO DE DADOS
+		return enunciado;
+	}	
+
+	public StatusAlternativa getStatusAlternativa() {
+		return statusAlternativa;
+	}
+	
+	public String getIdPergunta() { // PERGUNTAS SALVAS NO BANCO DE DADOS
+		return getIdPergunta();
+	}	
+	
+/*-----------------------------------------------------METODOS SET INICIO------------------------------------------------------------------------------------------------------------------------*/
+	
+	public void setIdAlternativa(String idAlternativa) {
+		this.idAlternativa = idAlternativa;
+	}
+	
+	public void setEnunciado(String enunciado) {
+		this.enunciado = enunciado;
+	}
+	
+	public void setStatusAlternativa(StatusAlternativa statusAlternativa) {
+		this.statusAlternativa = statusAlternativa;
+	}
+}

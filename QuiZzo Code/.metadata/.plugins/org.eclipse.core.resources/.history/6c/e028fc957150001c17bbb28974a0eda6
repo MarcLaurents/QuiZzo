@@ -1,0 +1,24 @@
+package QuiZzoInc;
+
+public class BotaoMenu {
+	
+	private String NomeBotao;
+
+	
+	
+	
+	public BotaoMenu(String nomeBotao) {
+		NomeBotao = nomeBotao;
+	}
+
+	public String getNomeBotao() {
+		return NomeBotao;
+	}
+
+	public void setNomeBotao(String nomeBotao) {
+		NomeBotao = nomeBotao;
+	}
+	
+	
+
+}

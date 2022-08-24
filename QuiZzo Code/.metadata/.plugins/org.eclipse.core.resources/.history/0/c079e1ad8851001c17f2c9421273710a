@@ -1,0 +1,295 @@
+package QuiZzoInc;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+
+
+public class Quizzo implements ActionListener {
+	JFrame frame = new JFrame();
+	JFrame frameMI = new JFrame();
+	JTextField textfield = new JTextField();
+	
+	
+	/*----------------------------DEVS----------------------------*/
+	JTextArea devNome0 = new JTextArea();
+	JTextArea devNome1 = new JTextArea();
+	JTextArea devNome2 = new JTextArea();
+	JTextArea devNome3 = new JTextArea();
+	JTextArea devNome4 = new JTextArea();
+	/*------------------------MENU INICIAL------------------------*/
+	JButton bInicio = new JButton(); 
+	JButton bDevs = new JButton(); 
+	JButton bRegras = new JButton();
+	JButton bSair = new JButton();
+	
+
+	public int optMI;
+	public String janela;
+
+	private Scanner input = new Scanner(System.in);
+
+	/*---------------------------------------------------------INICIO METODO CONSTRUTOR---------------------------------------------*/
+	public Quizzo() {
+		
+	}
+	
+	public String Janela() {
+		
+		this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // FEXA JALENA NO X
+		this.frame.setSize(1000, 1000); // TAMANHO DA JANELA
+		this.frame.getContentPane().setBackground(new Color(12, 97, 112)); // COR DA JANELA
+		this.frame.setLayout(null); // NULL LAYOUT
+		this.frame.setResizable(false); // JANELA NAO ALTERA TAMANHO
+		
+		frame.setVisible(true);
+		
+		
+		return janela;
+	}
+
+	/*---------------------------------------------------------MENU INICIAL---------------------------------------------------------*/
+	public int MenuInicial() {
+		
+		ArrayList<String> botMe = new ArrayList<>();
+		
+		botMe.add("INICIO");
+		botMe.add("DEVS");
+		botMe.add("REGRAS");
+		botMe.add("SAIR");
+		
+		bInicio.setBounds(375, 200, 250, 100);
+		bInicio.setBackground(new Color(164, 229, 224)); // SETTA COR DO PLANO DE FUNDO DO NUMERO DA QUESTAO
+		bInicio.setForeground(new Color(12, 97, 112)); // SETTA COR DO TEXTO DO NUMERO DA QUESTAO
+		bInicio.setFont(new Font("Comic Sans MS", Font.BOLD, 35)); 
+		bInicio.setFocusable(false);
+		bInicio.addActionListener(this);
+		bInicio.setText("inicio"); 
+		
+		frame.add(bInicio);
+		
+		
+		
+		
+		
+		
+		
+		return optMI;
+		/*ArrayList<BotaoMenu> botMe = new ArrayList<>();
+
+		
+		botMe.add(new BotaoMenu("Inicio", false));
+		botMe.add(new BotaoMenu("Devs", false));
+		botMe.add(new BotaoMenu("Regras", false));
+		botMe.add(new BotaoMenu("Sair", false));
+
+		
+		System.out.println("QuiZzo");
+		int count = 1;
+
+		for (BotaoMenu bt : botMe) {
+
+			if (!bt.isStatusBotao()) {
+				System.out.println("[" + count + "]" + bt.getNomeBotao() + "\n");
+
+			}
+			count++;
+		}
+
+		System.out.println("Escolha Uma Opcao");
+
+		int opcaoJM = input.nextInt();
+		botMe.get(opcaoJM - 1).setStatusBotao(true);
+		optMI = opcaoJM - 1;
+		*/
+		
+		
+		/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+	public void setoptMI() {
+		this.optMI = MenuInicial();
+	}
+
+	public int getOptMI() {
+		return optMI;
+	}
+
+	public int getX() {
+		return optMI;
+	}
+
+	
+	/*----------------------------------------------------------------------------MENU DEVS----------------------------------------------------------------------------*/
+	public ArrayList<String> MenuDevs() {
+		ArrayList<String> meDevs = new ArrayList<>();
+		
+		meDevs.add("Augusto César Emanuel Rosa de Assis" + "321110261");
+		meDevs.add("Debora Ferreira Gonçalves" + "321119461");
+		meDevs.add("Gabriel Lucas de Paula Gomes" + "321221122");
+		meDevs.add("Marcelo Laurentino Costa Melo" + "321220650");
+		meDevs.add("Tulho Henrique de Oliveira Melo, " + "321213318");
+
+		/*--------------------------------------------------FRONT END JANELA------------------------------------------------------*/
+		//this.Janela();
+		
+		
+		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // FEXA JALENA NO X
+		//frame.setSize(1000, 1000); // TAMANHO DA JANELA
+		//frame.getContentPane().setBackground(new Color(12, 97, 112)); // COR DA JANELA
+		//frame.setLayout(null); // NULL LAYOUT
+		//frame.setResizable(false); // JANELA NAO ALTERA TAMANHO
+		
+		/*--------------------------------------------------FRONT END TEXTO DEVS--------------------------------------------------*/
+		textfield.setBounds(0, 0, 1000, 100); // DEFINE A AREA DO TEXTO DO NUMERO DA QUESTÃO
+		textfield.setBackground(new Color(164, 229, 224)); // SETTA COR DO PLANO DE FUNDO DO NUMERO DA QUESTAO
+		textfield.setForeground(new Color(12, 97, 112)); // SETTA COR DO TEXTO DO NUMERO DA QUESTAO
+		textfield.setFont(new Font("Comic book", Font.PLAIN, 80)); // SETTA TIPO DE FONTE E TAMANHO DO NUMERO DA QUESTAO
+		textfield.setBorder(BorderFactory.createBevelBorder(1));
+		textfield.setHorizontalAlignment(JTextField.CENTER); // SETTA ALINHAMENTO DO TEXTO DO NUMERO DA QUESTAO
+		textfield.setEditable(false); // SETTA COMO INALTERAVEL O TEXTO DO NUMERO DA QUESTAO
+		textfield.setText("DEVS");
+
+		/*--------------------------------------------------FRONT END TEXTO INFO DEVS----------------------------------------------*/
+		devNome0.setBounds(100, 100, 900, 100); // I_VER, I_HOR, F_VER, F_HOR
+		devNome0.setLineWrap(true);
+		devNome0.setWrapStyleWord(true);
+		devNome0.setBackground(new Color(219, 245, 240));
+		devNome0.setForeground(new Color(12, 97, 112));
+		devNome0.setFont(new Font("Comic book", Font.PLAIN, 25));
+		devNome0.setBorder(BorderFactory.createBevelBorder(1));
+		devNome0.setEditable(false);
+		devNome0.setText("     Augusto César Emanuel Rosa de Assis " + "\n     RA: 321110261");
+
+		devNome1.setBounds(100, 200, 900, 100); // I_VER, I_HOR, F_VER, F_HOR
+		devNome1.setLineWrap(true);
+		devNome1.setWrapStyleWord(true);
+		devNome1.setBackground(new Color(219, 245, 240));
+		devNome1.setForeground(new Color(12, 97, 112));
+		devNome1.setFont(new Font("Comic book", Font.PLAIN, 25));
+		devNome1.setBorder(BorderFactory.createBevelBorder(1));
+		devNome1.setEditable(false);
+		devNome1.setText("     Debora Ferreira Gonçalves" + "\n     RA: 321119461");
+
+		devNome2.setBounds(100, 300, 900, 100); // I_VER, I_HOR, F_VER, F_HOR
+		devNome2.setLineWrap(true);
+		devNome2.setWrapStyleWord(true);
+		devNome2.setBackground(new Color(219, 245, 240));
+		devNome2.setForeground(new Color(12, 97, 112));
+		devNome2.setFont(new Font("Comic book", Font.PLAIN, 25));
+		devNome2.setBorder(BorderFactory.createBevelBorder(1));
+		devNome2.setEditable(false);
+		devNome2.setText("     Gabriel Lucas de Paula Gomes" + "\n     321221122");
+		
+		devNome3.setBounds(100, 400, 900, 100); // I_VER, I_HOR, F_VER, F_HOR
+		devNome3.setLineWrap(true);
+		devNome3.setWrapStyleWord(true);
+		devNome3.setBackground(new Color(219, 245, 240));
+		devNome3.setForeground(new Color(12, 97, 112));
+		devNome3.setFont(new Font("Comic book", Font.PLAIN, 25));
+		devNome3.setBorder(BorderFactory.createBevelBorder(1));
+		devNome3.setEditable(false);
+		devNome3.setText("     Marcelo Laurentino Costa Melo" + "\n     321220650");
+		
+		devNome4.setBounds(100, 500, 900, 100); // I_VER, I_HOR, F_VER, F_HOR
+		devNome4.setLineWrap(true);
+		devNome4.setWrapStyleWord(true);
+		devNome4.setBackground(new Color(219, 245, 240));
+		devNome4.setForeground(new Color(12, 97, 112));
+		devNome4.setFont(new Font("Comic book", Font.PLAIN, 25));
+		devNome4.setBorder(BorderFactory.createBevelBorder(1));
+		devNome4.setEditable(false);
+		devNome4.setText("     Tulho Henrique de Oliveira Melo, " + "\n     321213318");
+
+
+		
+		//frame.add(new JLabel(new ImageIcon("Path/To/Your/Image.png")));
+		frame.add(textfield);
+		frame.add(devNome0);
+		frame.add(devNome1);
+		frame.add(devNome2);
+		frame.add(devNome3);
+		frame.add(devNome4);
+
+		frame.setVisible(true);
+
+		return meDevs;
+	}
+
+	
+
+	/*---------------------------------------------------------MENU ESCOLHA PERSONAGEM----------------------------------------------*/
+public ArrayList<Personagem> MenuEscolhaPersonagem() {
+
+		ArrayList<Personagem> pers = new ArrayList<>();
+		ArrayList<String> hab = new ArrayList<>();
+
+		hab.add("Adicionar Tempo");
+		hab.add("Adicionar Vida");
+
+		/*--------------------CRIACAO DOS PERSONAGENS------------------*/ // CODIGO, NOME, HABILIDADES, STATUS, VIDA
+		pers.add(new Personagem("PF1", "Fio Germi", hab, false, 100));
+		pers.add(new Personagem("PF2", "Katalina", hab, false, 100));
+		pers.add(new Personagem("PF3", "Mello", hab, false, 100));
+		pers.add(new Personagem("PM1", "Marco Rossi", hab, false, 100));
+		pers.add(new Personagem("PM2", "Tarma Roving", hab, false, 100));
+		return pers;
+	}
+
+	public int EscolhaPersonagem() {
+
+		ArrayList<Personagem> pers = MenuEscolhaPersonagem();
+		/*--------------------JOGADOR 1 ESCOLHA--------------------*/
+		System.out.println("Personagens");
+
+		int count = 1;
+
+		for (Personagem pe : pers) {
+
+			if (!pe.isStatusPersonagem()) {
+				System.out.println("[" + count + "]" + pe.getnomePersonagem() + "\n");
+
+			}
+			count++;
+		}
+
+		System.out.println("JOGADOR Escolha um personagem");
+
+		int opcaoJ1 = input.nextInt();
+		pers.get(opcaoJ1 - 1).setStatusPersonagem(true);
+		return opcaoJ1;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	/*---------------------------------------------------------                -----------------------------------------------------*/
+
+}

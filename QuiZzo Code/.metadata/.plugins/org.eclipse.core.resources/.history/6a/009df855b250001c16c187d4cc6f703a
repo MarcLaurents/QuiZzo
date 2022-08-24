@@ -1,0 +1,29 @@
+package QuiZzoInc;
+
+import QuiZzoInc.Quizzo;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		
+		
+		
+		Quizzo quizzo = new Quizzo();
+		Jogador jogador1 = new Jogador();
+		quizzo.setoptMI();		
+		if(quizzo.getOptMI() == 0) {
+			
+			jogador1.setNome();
+			
+		}
+		else {
+			
+		}
+		
+		
+		
+
+	}
+
+}

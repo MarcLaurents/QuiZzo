@@ -1,0 +1,31 @@
+package QuiZzoInc;
+
+public class BotaoMenu {
+	
+	private String nomeBotao;
+	private boolean statusBotao;
+	
+	public BotaoMenu(String nomeBotao, boolean statusBotao) {
+		this.nomeBotao = nomeBotao;
+		this.statusBotao = statusBotao;
+	}
+
+	public String getNomeBotao() {
+		return nomeBotao;
+	}
+	
+	public boolean getStatusBotao() {
+		return statusBotao;
+	}
+
+	public void setNomeBotao(String nomeBotao) {
+		this.nomeBotao = nomeBotao;
+	}
+	
+	public void setStatusBotao(boolean statusBotao) {
+		this.statusBotao = statusBotao;
+	}
+	
+	
+
+}

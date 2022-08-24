@@ -1,0 +1,111 @@
+package QuiZzoInc;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import javax.swing.Action;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class MenuInicial implements ActionListener {
+
+	JFrame frame = new JFrame();
+	JTextField textfield = new JTextField();
+
+	/*----------------------------DEVS----------------------------*/
+	JTextArea devNome0 = new JTextArea();
+	JTextArea devNome1 = new JTextArea();
+	JTextArea devNome2 = new JTextArea();
+	JTextArea devNome3 = new JTextArea();
+	JTextArea devNome4 = new JTextArea();
+	/*------------------------MENU INICIAL------------------------*/
+	JButton bInicio = new JButton();
+	JButton bDevs = new JButton();
+	JButton bRegras = new JButton();
+	JButton bSair = new JButton();
+	
+	
+	String[] botSelection = { "INICIO", "DEVS" };
+	String botName;
+	int index;
+
+	public MenuInicial() {
+
+		ArrayList<String> botMe = new ArrayList<>();
+
+		botMe.add("INICIO");
+		botMe.add("DEVS");
+		botMe.add("REGRAS");
+		botMe.add("SAIR");
+
+		bInicio.setBounds(375, 200, 250, 75);
+		bInicio.setBackground(new Color(164, 229, 224)); // SETTA COR DO PLANO DE FUNDO DO NUMERO DA QUESTAO
+		bInicio.setForeground(new Color(12, 97, 112)); // SETTA COR DO TEXTO DO NUMERO DA QUESTAO
+		bInicio.setFont(new Font("Comic Sans MS", Font.BOLD, 35));
+		bInicio.setFocusable(false);
+		bInicio.addActionListener(this);
+		bInicio.setText("INICIO");
+
+		bDevs.setBounds(375, 310, 250, 75);
+		bDevs.setBackground(new Color(164, 229, 224)); // SETTA COR DO PLANO DE FUNDO DO NUMERO DA QUESTAO
+		bDevs.setForeground(new Color(12, 97, 112)); // SETTA COR DO TEXTO DO NUMERO DA QUESTAO
+		bDevs.setFont(new Font("Comic Sans MS", Font.BOLD, 35));
+		bDevs.setFocusable(false);
+		bDevs.addActionListener(this);
+		bDevs.setText("DEVS");
+
+		frame.add(bInicio);
+		frame.add(bDevs);
+		
+
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+		
+		/*---DESABILITANDO BOTOES---*/
+		bInicio.setEnabled(false);
+		bDevs.setEnabled(false);
+		
+
+		/*---DETERMINANDO QUAL BOTAO FOI CLICADO E ACAO POS CLICK---*/
+		if (e.getSource() == bInicio) { // BUTTON A
+			botName = "INICIO";
+			if (botName == botSelection[index]) {
+				
+			}
+		}
+
+		if (e.getSource() == buttonB) { // BUTTON B
+			answer = 'B';
+			if (answer == answers[index]) {
+				correct_guesses++;
+			}
+		}
+
+		if (e.getSource() == buttonC) { // BUTTON C
+			answer = 'C';
+			if (answer == answers[index]) {
+				correct_guesses++;
+			}
+		}
+
+		if (e.getSource() == buttonD) { // BUTTON D
+			answer = 'D';
+			if (answer == answers[index]) {
+				correct_guesses++;
+			}
+		}
+
+	}
+
+}

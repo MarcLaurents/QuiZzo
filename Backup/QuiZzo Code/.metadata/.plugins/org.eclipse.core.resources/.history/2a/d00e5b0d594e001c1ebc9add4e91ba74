@@ -1,0 +1,42 @@
+package QuiZzoInc;
+
+import QuiZzoInc.Personagem;
+
+public class MenuEscolhaPersonagem extends Personagem {
+	
+	MenuEscolhaPersonagem(String Habilidades) {
+		super(Habilidades);
+		// TODO Auto-generated constructor stub
+	}
+
+	public MenuEscolhaPersonagem() {
+		// TODO Auto-generated constructor stub
+	}
+
+	private String idEscolhaPersonagem;
+    private String personagemCadastrados;
+    private int totalPersonagens;
+    private boolean personagemEscolhido = false;
+
+    public void personagemEscolhido() {
+	  	String botaoEscolhaPersonagem = "ESCOLHA SEU PERSONAGEM";
+	  	
+		switch(botaoEscolhaPersonagem) {
+		
+		case "JAMES RODRIGUES":	
+			
+			this.setStatusPersonagem(true);
+			
+			break;
+			
+		case "SAMARA CHAMADO":
+			
+			this.setStatusPersonagem(true);
+			
+			break;
+		
+		}
+  }
+
+}
+

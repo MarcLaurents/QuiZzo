@@ -1,0 +1,80 @@
+package QuiZzoInc;
+
+public class Pergunta  {
+	private String idPergunta;
+	private String[] enunciados = { // ENUNCIADOS 
+			
+									"Perungta 1 ",
+									"Pergunta 2 ",
+									"Pergunta 3 ",
+									"Pergunta 4 ",
+									"Pergunta 5 "			
+								  };
+	private Alternativa alternativas[];
+
+	
+	int totalEnunciados = enunciados.length;
+	int resultado;
+	int tempoResposta = 20;
+	
+	
+/*-----------------------------------------------------METODO CONSTRUTOR INICIO------------------------------------------------------------------------------------------------------------------*/
+	public Pergunta(String idPergunta, String enunciado, int tempoResposta) {
+		this.alternativas = new Alternativa[4];
+		this.idPergunta = idPergunta;
+		this.enunciados = enunciados;
+		this.tempoResposta = tempoResposta;
+	}
+/*-----------------------------------------------------METODO CONSTRUTOR FIM---------------------------------------------------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------METODOS GET INICIO------------------------------------------------------------------------------------------------------------------------*/
+	public String getIdPergunta() {
+		return idPergunta;
+	}
+	
+	public String[] getEnunciados() {
+		return enunciados;
+	}
+
+	public Alternativa[] getAlternativas() {
+		return alternativas;
+	}
+	
+	public int getTotalEnunciados() {
+		return totalEnunciados;
+	}
+
+	public int getResultado() {
+		return resultado;
+	}
+
+	public int getTempoResposta() {
+		return tempoResposta;
+	}	
+	
+/*-----------------------------------------------------METODOS SET INICIO------------------------------------------------------------------------------------------------------------------------*/
+	public void setIdPergunta(String idPergunta) {
+		this.idPergunta = idPergunta;
+	}
+	
+	public void setEnunciados(String[] enunciados) {
+		this.enunciados = enunciados;
+	}
+	
+	public void setAlternativas(Alternativa[] alternativas) {
+		this.alternativas = alternativas;
+	}
+	
+	public void setTotalEnunciados(int totalEnunciados) {
+		this.totalEnunciados = totalEnunciados;
+	}
+	
+	public void setResultado(int Resultado) {
+		this.Resultado;
+	}
+	
+	public void setTempoResposta(int tempoResposta) {
+		this.tempoResposta = tempoResposta;
+	}
+	
+}

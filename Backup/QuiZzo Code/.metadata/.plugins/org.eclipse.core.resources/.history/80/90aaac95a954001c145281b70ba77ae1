@@ -1,0 +1,510 @@
+package QuiZzoInc;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class Quizzo implements ActionListener {
+	JFrame frame = new JFrame();
+	JTextField textfield = new JTextField();	
+
+	/*----------------------------DEVS----------------------------*/
+	JTextArea devNome0 = new JTextArea();
+	JTextArea devNome1 = new JTextArea();
+	JTextArea devNome2 = new JTextArea();
+	JTextArea devNome3 = new JTextArea();
+	JTextArea devNome4 = new JTextArea();
+	
+	JLabel areaAugustoFoto = new JLabel();
+	JLabel areaDeboraFoto = new JLabel();
+	JLabel areaGabrielFoto = new JLabel();
+	JLabel areaMarceloFoto = new JLabel();
+	JLabel areaTulhoFoto = new JLabel();
+	
+	/*------------------------MENU INICIAL------------------------*/
+	String[] botSelection = { "INICIO", "DEVS", "REGRAS", "SAIR" };
+	
+	JButton bInicio = new JButton();
+	JButton bDevs = new JButton();
+	JButton bRegras = new JButton();
+	JButton bSair = new JButton();
+
+	/*-------------------CADASTRO JOGADOR-------------------------*/
+	ArrayList<String> cadJog = new ArrayList<>();
+	
+	Jogador jogador1 = new Jogador();
+	Jogador jogador2 = new Jogador();
+	
+	/*------------------------MENU PERSONAGENS--------------------*/
+	ArrayList<String> pChoise = new ArrayList<>();
+	
+	JTextField persTitle = new JTextField();
+	
+	JTextArea persArea = new JTextArea();
+	
+	JLabel areaP1Foto = new JLabel();
+	JLabel areaP2Foto = new JLabel();
+	JLabel areaP3Foto = new JLabel();
+	JLabel areaP4Foto = new JLabel();
+	JLabel areaP5Foto = new JLabel();
+	int countPersonagem = 0;
+	
+	/*------------------------PERSONAGENS-------------------------*/
+	Personagem fioGermi = new Personagem("Fio Germi", 100.0);
+	Personagem katalina = new Personagem("Katalina", 100.0);
+	Personagem mello = new Personagem("Mello", 100.0);
+	Personagem marcoRossi = new Personagem("Marco Rossi", 100.0);
+	Personagem tarmaRoving = new Personagem("Tarma Roving", 100.0);	
+	
+	
+	JButton bP1 = new JButton();	
+	JButton bP2 = new JButton();
+	JButton bP3 = new JButton();
+	JButton bP4 = new JButton();
+	JButton bP5 = new JButton();
+	
+	JLabel fotoP1 = new JLabel();
+	JLabel fotoP2 = new JLabel();
+	JLabel fotoP3 = new JLabel();
+	JLabel fotoP4 = new JLabel();
+	JLabel fotoP5 = new JLabel();
+	
+	
+
+	public String janela;
+
+	/*-------------------------------------------------------------------------METODO CONSTRUTOR-----------------------------------------------------------------------*/
+	public Quizzo() {
+
+	}
+	
+	/*------------------------------------------------------------------------------JANELA-----------------------------------------------------------------------------*/
+	public String Janela() {
+
+		this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // FEXA JALENA NO X
+		this.frame.setSize(1000, 1000); // TAMANHO DA JANELA
+		this.frame.getContentPane().setBackground(new Color(12, 97, 112)); // COR DA JANELA
+		this.frame.setLayout(null); // NULL LAYOUT
+		this.frame.setResizable(false); // JANELA NAO ALTERA TAMANHO
+
+		frame.setVisible(true);
+
+		return janela;
+	}
+
+	/*--------------------------------------------------------------------------MENU INICIAL---------------------------------------------------------------------------*/
+	public void MenuInicial() {
+
+		/*------------------------------------------BOTAO INICIO--------------------------------------------------*/
+		bInicio.setBounds(375, 200, 250, 75);
+		bInicio.setBackground(new Color(164, 229, 224)); // SETTA COR DO PLANO DE FUNDO DO NUMERO DA QUESTAO
+		bInicio.setForeground(new Color(12, 97, 112)); // SETTA COR DO TEXTO DO NUMERO DA QUESTAO
+		bInicio.setFont(new Font("Comic Sans MS", Font.BOLD, 35));
+		bInicio.setFocusable(false);
+		bInicio.setText("INICIO");
+		bInicio.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent botAction) {
+				bInicio.setVisible(false);
+				bDevs.setVisible(false);
+				cadastroJogador();
+
+			}
+		});
+
+		/*------------------------------------------BOTAO DEVS--------------------------------------------------*/
+		bDevs.setBounds(375, 310, 250, 75);
+		bDevs.setBackground(new Color(164, 229, 224)); // SETTA COR DO PLANO DE FUNDO DO NUMERO DA QUESTAO
+		bDevs.setForeground(new Color(12, 97, 112)); // SETTA COR DO TEXTO DO NUMERO DA QUESTAO
+		bDevs.setFont(new Font("Comic Sans MS", Font.BOLD, 35));
+		bDevs.setFocusable(false);
+		bDevs.setText("DEVS");
+		bDevs.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent botAction) {
+				bInicio.setVisible(false);
+				bDevs.setVisible(false);
+				menuDevs();
+
+			}
+		});
+
+		frame.add(bInicio);
+		frame.add(bDevs);
+
+
+	}
+
+	/*-------------------------------------------------------------------------CADASTRO JOGADOR------------------------------------------------------------------------*/
+	public void cadastroJogador() {
+		
+		String cadJogador1 = JOptionPane.showInputDialog(frame, "Jogador Nº1 Insira um nome para Cadastro:");
+		String cadJogador2 = JOptionPane.showInputDialog(frame, "Jogador Nº2 Insira um nome para Cadastro:");
+		
+		jogador1.setNomeJogador(cadJogador1);
+		jogador2.setNomeJogador(cadJogador2);		
+		
+		ArrayList<String> cadJog = new ArrayList<>();
+		cadJog.add(cadJogador1);
+		cadJog.add(cadJogador2);		
+		
+		if(cadJog.size() == 2) {
+			MenuEscolhaPersonagem();
+		}	
+
+	}	
+
+	/*----------------------------------------------------------------------------MENU DEVS----------------------------------------------------------------------------*/
+	public void menuDevs() {
+		ArrayList<String> meDevs = new ArrayList<>();
+
+		meDevs.add("Augusto César Emanuel Rosa de Assis" + "321110261");
+		meDevs.add("Debora Ferreira Gonçalves" + "321119461");
+		meDevs.add("Gabriel Lucas de Paula Gomes" + "321221122");
+		meDevs.add("Marcelo Laurentino Costa Melo" + "321220650");
+		meDevs.add("Tulho Henrique de Oliveira Melo, " + "321213318");
+
+		/*--------------------------------------------------FRONT END TEXTO DEVS--------------------------------------------------*/
+		textfield.setBounds(0, 0, 1000, 100); // DEFINE A AREA DO TEXTO DO NUMERO DA QUESTÃO
+		textfield.setBackground(new Color(164, 229, 224)); // SETTA COR DO PLANO DE FUNDO DO NUMERO DA QUESTAO
+		textfield.setForeground(new Color(12, 97, 112)); // SETTA COR DO TEXTO DO NUMERO DA QUESTAO
+		textfield.setFont(new Font("Comic book", Font.PLAIN, 80)); // SETTA TIPO DE FONTE E TAMANHO DO NUMERO DA QUESTAO
+		textfield.setBorder(BorderFactory.createBevelBorder(1));
+		textfield.setHorizontalAlignment(JTextField.CENTER); // SETTA ALINHAMENTO DO TEXTO DO NUMERO DA QUESTAO
+		textfield.setEditable(false); // SETTA COMO INALTERAVEL O TEXTO DO NUMERO DA QUESTAO
+		textfield.setText("DEVS");
+
+		/*--------------------------------------------------FRONT END TEXTO INFO DEVS----------------------------------------------*/
+		devNome0.setBounds(100, 100, 900, 100); // I_VER, I_HOR, F_VER, F_HOR
+		devNome0.setLineWrap(true);
+		devNome0.setWrapStyleWord(true);
+		devNome0.setBackground(new Color(219, 245, 240));
+		devNome0.setForeground(new Color(12, 97, 112));
+		devNome0.setFont(new Font("Comic book", Font.PLAIN, 25));
+		devNome0.setBorder(BorderFactory.createBevelBorder(1));
+		devNome0.setEditable(false);
+		devNome0.setText("     Augusto César Emanuel Rosa de Assis " + "\n     RA: 321110261");
+
+		devNome1.setBounds(100, 200, 900, 100); // I_VER, I_HOR, F_VER, F_HOR
+		devNome1.setLineWrap(true);
+		devNome1.setWrapStyleWord(true);
+		devNome1.setBackground(new Color(219, 245, 240));
+		devNome1.setForeground(new Color(12, 97, 112));
+		devNome1.setFont(new Font("Comic book", Font.PLAIN, 25));
+		devNome1.setBorder(BorderFactory.createBevelBorder(1));
+		devNome1.setEditable(false);
+		devNome1.setText("     Debora Ferreira Gonçalves" + "\n     RA: 321119461");
+
+		devNome2.setBounds(100, 300, 900, 100); // I_VER, I_HOR, F_VER, F_HOR
+		devNome2.setLineWrap(true);
+		devNome2.setWrapStyleWord(true);
+		devNome2.setBackground(new Color(219, 245, 240));
+		devNome2.setForeground(new Color(12, 97, 112));
+		devNome2.setFont(new Font("Comic book", Font.PLAIN, 25));
+		devNome2.setBorder(BorderFactory.createBevelBorder(1));
+		devNome2.setEditable(false);
+		devNome2.setText("     Gabriel Lucas de Paula Gomes" + "\n     RA: 321221122");
+		ImageIcon gabrielFoto = new ImageIcon("C:\\Users\\marce\\OneDrive\\Área de Trabalho\\QuiZzo\\Backup\\QuiZzo Code\\QuiZzo\\FotoDevs\\Gabriel.jpeg");
+		areaGabrielFoto.setIcon(gabrielFoto);
+		areaGabrielFoto.setBounds(0, 300, 100, 100);
+		areaGabrielFoto.setBorder(BorderFactory.createLineBorder(new Color(219, 245, 240), 3, true));
+
+		devNome3.setBounds(100, 400, 900, 100); // I_VER, I_HOR, F_VER, F_HOR
+		devNome3.setLineWrap(true);
+		devNome3.setWrapStyleWord(true);
+		devNome3.setBackground(new Color(219, 245, 240));
+		devNome3.setForeground(new Color(12, 97, 112));
+		devNome3.setFont(new Font("Comic book", Font.PLAIN, 25));
+		devNome3.setBorder(BorderFactory.createBevelBorder(1));
+		devNome3.setEditable(false);
+		devNome3.setText("     Marcelo Laurentino Costa Melo" + "\n     RA: 321220650");
+
+		devNome4.setBounds(100, 500, 900, 100); // I_VER, I_HOR, F_VER, F_HOR
+		devNome4.setLineWrap(true);
+		devNome4.setWrapStyleWord(true);
+		devNome4.setBackground(new Color(219, 245, 240));
+		devNome4.setForeground(new Color(12, 97, 112));
+		devNome4.setFont(new Font("Comic book", Font.PLAIN, 25));
+		devNome4.setBorder(BorderFactory.createBevelBorder(1));
+		devNome4.setEditable(false);
+		devNome4.setText("     Tulho Henrique de Oliveira Melo " + "\n     RA: 321213318");
+
+		
+		
+
+		frame.add(areaGabrielFoto);
+		frame.add(textfield);
+		frame.add(devNome0);
+		frame.add(devNome1);
+		frame.add(devNome2);
+		frame.add(devNome3);
+		frame.add(devNome4);
+
+		
+	}
+
+	/*--------------------------------------------------------------------MENU ESCOLHA PERSONAGEM----------------------------------------------------------------------*/
+	public void MenuEscolhaPersonagem() {
+		/*--------------------CRIACAO DOS PERSONAGENS------------------*/ // NOME - VIDA
+			
+		
+		persTitle.setBounds(0, 0, 1000, 100); // DEFINE A AREA DO TEXTO DO NUMERO DA QUESTÃO
+		persTitle.setBackground(new Color(164, 229, 224)); // SETTA COR DO PLANO DE FUNDO DO NUMERO DA QUESTAO
+		persTitle.setForeground(new Color(12, 97, 112)); // SETTA COR DO TEXTO DO NUMERO DA QUESTAO
+		persTitle.setFont(new Font("Comic book", Font.PLAIN, 80)); // SETTA TIPO DE FONTE E TAMANHO DO NUMERO DA QUESTAO
+		persTitle.setBorder(BorderFactory.createBevelBorder(1));
+		persTitle.setHorizontalAlignment(JTextField.CENTER); // SETTA ALINHAMENTO DO TEXTO DO NUMERO DA QUESTAO
+		persTitle.setEditable(false); // SETTA COMO INALTERAVEL O TEXTO DO NUMERO DA QUESTAO
+		persTitle.setText("PERSONAGENS");
+		persTitle.setVisible(true);		
+		
+		/*---------------FIO GERMI---------------*/
+		bP1.setBounds(10, 400, 150, 50);
+		bP1.setBackground(new Color(164, 229, 224)); // SETTA COR DO PLANO DE FUNDO DO NUMERO DA QUESTAO
+		bP1.setForeground(new Color(12, 97, 112)); // SETTA COR DO TEXTO DO NUMERO DA QUESTAO
+		bP1.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+		bP1.setFocusable(false);
+		bP1.setText("Fio Germi");
+		ImageIcon fotoP1 = new ImageIcon("C:\\Users\\marce\\OneDrive\\Área de Trabalho\\QuiZzo\\Backup\\QuiZzo Code\\QuiZzo\\FotoPersonagens\\Fio_Germi.png");
+		areaP1Foto.setIcon(fotoP1);
+		areaP1Foto.setBounds(10, 100, 150, 300);
+		areaP1Foto.setBorder(BorderFactory.createLineBorder(new Color(219, 245, 240), 3, true));
+		bP1.setVisible(true);
+		bP1.setBorder(BorderFactory.createLineBorder(new Color(219, 245, 240), 3, true));
+		bP1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent botAction) {				
+				countPersonagem = 1;
+				bP1.setEnabled(false);
+				
+				
+				jogador1.setPersonagemEscolhido(fioGermi);
+				
+			}
+		});
+		
+		/*---------------KATALINA---------------*/
+		bP2.setBounds(180, 400, 150, 50);
+		bP2.setBackground(new Color(164, 229, 224)); // SETTA COR DO PLANO DE FUNDO DO NUMERO DA QUESTAO
+		bP2.setForeground(new Color(12, 97, 112)); // SETTA COR DO TEXTO DO NUMERO DA QUESTAO
+		bP2.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+		bP2.setFocusable(false);
+		bP2.setText("Katalina");
+		ImageIcon fotoP2 = new ImageIcon("C:\\Users\\marce\\OneDrive\\Área de Trabalho\\QuiZzo\\Backup\\QuiZzo Code\\QuiZzo\\FotoPersonagens\\Katalina.png");
+		areaP2Foto.setIcon(fotoP2);
+		areaP2Foto.setBounds(180, 100, 150, 300);
+		areaP2Foto.setBorder(BorderFactory.createLineBorder(new Color(219, 245, 240), 3, true));
+		bP2.setVisible(true);
+		bP2.setBorder(BorderFactory.createLineBorder(new Color(219, 245, 240), 3, true));
+		bP2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent botAction) {
+				countPersonagem++;
+				bP2.setEnabled(false);
+				jogador1.setPersonagemEscolhido(katalina);				
+				
+			}
+		});
+		
+		/*---------------MARCO ROSSI---------------*/
+		bP3.setBounds(350, 400, 150, 50);
+		bP3.setBackground(new Color(164, 229, 224)); // SETTA COR DO PLANO DE FUNDO DO NUMERO DA QUESTAO
+		bP3.setForeground(new Color(12, 97, 112)); // SETTA COR DO TEXTO DO NUMERO DA QUESTAO
+		bP3.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+		bP3.setFocusable(false);
+		bP3.setText("Marco Rossi");
+		ImageIcon fotoP3 = new ImageIcon("C:\\Users\\marce\\OneDrive\\Área de Trabalho\\QuiZzo\\Backup\\QuiZzo Code\\QuiZzo\\FotoPersonagens\\Marco_Rossi.png");
+		areaP3Foto.setIcon(fotoP3);
+		areaP3Foto.setBounds(350, 100, 150, 300);
+		areaP3Foto.setBorder(BorderFactory.createLineBorder(new Color(219, 245, 240), 3, true));
+		bP3.setVisible(true);
+		bP3.setBorder(BorderFactory.createLineBorder(new Color(219, 245, 240), 3, true));
+		bP3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent botAction) {
+				countPersonagem++;
+				bP3.setEnabled(false);
+				jogador1.setPersonagemEscolhido(marcoRossi);				
+				
+			}
+		});
+		
+		/*---------------MELLO---------------*/
+		bP4.setBounds(520, 400, 150, 50);
+		bP4.setBackground(new Color(164, 229, 224)); // SETTA COR DO PLANO DE FUNDO DO NUMERO DA QUESTAO
+		bP4.setForeground(new Color(12, 97, 112)); // SETTA COR DO TEXTO DO NUMERO DA QUESTAO
+		bP4.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+		bP4.setFocusable(false);
+		bP4.setText("Mello");
+		ImageIcon fotoP4 = new ImageIcon("C:\\Users\\marce\\OneDrive\\Área de Trabalho\\QuiZzo\\Backup\\QuiZzo Code\\QuiZzo\\FotoPersonagens\\Mello.png");
+		areaP4Foto.setIcon(fotoP4);
+		areaP4Foto.setBounds(520, 100, 150, 300);
+		areaP4Foto.setBorder(BorderFactory.createLineBorder(new Color(219, 245, 240), 3, true));
+		bP4.setVisible(true);
+		bP4.setBorder(BorderFactory.createLineBorder(new Color(219, 245, 240), 3, true));
+		bP4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent botAction) {
+				countPersonagem++;
+				bP4.setEnabled(false);
+				jogador1.setPersonagemEscolhido(marcoRossi);				
+				
+			}
+		});
+		
+		/*---------------TARMA ROVING---------------*/
+		bP5.setBounds(800, 500, 150, 50);
+		bP5.setBackground(new Color(164, 229, 224)); // SETTA COR DO PLANO DE FUNDO DO NUMERO DA QUESTAO
+		bP5.setForeground(new Color(12, 97, 112)); // SETTA COR DO TEXTO DO NUMERO DA QUESTAO
+		bP5.setFont(new Font("Comic Sans MS", Font.BOLD, 20));
+		bP5.setFocusable(false);
+		bP5.setText("Tarma Roving");
+		ImageIcon fotoP5 = new ImageIcon("C:\\Users\\marce\\OneDrive\\Área de Trabalho\\QuiZzo\\Backup\\QuiZzo Code\\QuiZzo\\FotoPersonagens\\Tarma_Roving.png");
+		areaP5Foto.setIcon(fotoP5);
+		areaP5Foto.setBounds(800, 200, 150, 300);
+		areaP5Foto.setBorder(BorderFactory.createLineBorder(new Color(219, 245, 240), 3, true));
+		bP5.setVisible(true);
+		bP5.setBorder(BorderFactory.createLineBorder(new Color(219, 245, 240), 3, true));
+		bP5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent botAction) {
+				countPersonagem++;
+				bP5.setEnabled(false);
+				jogador1.setPersonagemEscolhido(marcoRossi);				
+				
+			}
+		});
+		
+		
+		//comecarJogo();
+		
+		
+		frame.add(bP1);
+		frame.add(bP2);
+		frame.add(bP3);
+		frame.add(bP4);
+		frame.add(bP5);
+		
+		frame.add(areaP1Foto);
+		frame.add(areaP2Foto);
+		frame.add(areaP3Foto);
+		frame.add(areaP4Foto);
+		frame.add(areaP5Foto);
+		
+		frame.add(persTitle);
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+		
+	}
+	
+	/*public void comecarJogo() {
+		bP1.setVisible(false);
+		bP2.setVisible(false);
+		areaP1Foto.setVisible(false);
+		areaP2Foto.setVisible(false);
+		persTitle.setVisible(false);
+		
+		Partida partida = new Partida();
+	}*/
+	
+	
+	public void partida() {
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	/**public int EscolhaPersonagem() {
+
+		ArrayList<Personagem> pers = MenuEscolhaPersonagem();
+		--------------------JOGADOR 1 ESCOLHA--------------------
+		System.out.println("Personagens");
+
+		int count = 1;
+
+		for (Personagem pe : pers) {
+
+			if (!pe.isStatusPersonagem()) {
+				System.out.println("[" + count + "]" + pe.getnomePersonagem() + "\n");
+
+			}
+			count++;
+		}
+
+		System.out.println("JOGADOR Escolha um personagem");
+
+		int opcaoJ1 = input.nextInt();
+		pers.get(opcaoJ1 - 1).setStatusPersonagem(true);
+		return opcaoJ1;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+
+	}**/
+
+	/*---------------------------------------------------------                -----------------------------------------------------*/
+
+}

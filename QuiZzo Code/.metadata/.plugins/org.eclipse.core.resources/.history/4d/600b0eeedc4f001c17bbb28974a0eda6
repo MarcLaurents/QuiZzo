@@ -1,0 +1,16 @@
+package QuiZzoInc;
+
+import java.util.ArrayList;
+
+public class MenuEscolhaPersonagem {	
+
+	private String idEscolhaPersonagem;
+    private ArrayList<Personagem> personagem;
+    
+    
+    
+    
+    
+
+}
+

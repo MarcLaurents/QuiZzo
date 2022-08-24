@@ -1,0 +1,63 @@
+package QuiZzoInc;
+
+import java.util.ArrayList;
+
+public class Alternativa {
+	private String idAlternativa;
+	private String enunciado;
+	private boolean statusAlternativa;
+	
+	
+/*-----------------------------------------------------METODO CONSTRUTOR INICIO------------------------------------------------------------------------------------------------------------------*/
+	public Alternativa(String idAlternativa, String enunciado, boolean statusAlternativa) {
+		this.idAlternativa = idAlternativa;
+		this.enunciado = enunciado;
+		this.statusAlternativa = statusAlternativa;
+		
+	}	
+	
+	
+	
+	
+/*-----------------------------------------------------METODOS GET INICIO------------------------------------------------------------------------------------------------------------------------*/
+	public String getIdAlternativa() {
+		return idAlternativa;
+	}
+	
+	public String getenunciado() {
+		return enunciado;
+	}
+	
+	public boolean getstatusAlternativa() {
+		return statusAlternativa;
+	}
+	
+	@Override
+	public String toString() {		
+		return "Alternativa " + this.enunciado + statusAlternativa;
+	}
+
+
+
+
+	
+	
+/*-----------------------------------------------------METODOS SET INICIO------------------------------------------------------------------------------------------------------------------------*/
+	public void setIdAlternativa(String idAlternativa) {
+		this.idAlternativa = idAlternativa;
+	}
+
+
+
+
+	public void setEnunciado(String enunciado) {
+		this.enunciado = enunciado;
+	}
+
+
+
+
+	public void setStatusAlternativa(boolean statusAlternativa) {
+		this.statusAlternativa = statusAlternativa;
+	}
+}

@@ -1,0 +1,49 @@
+package QuiZzoInc;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import javax.swing.Action;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class MenuInicial implements ActionListener {
+	
+	JFrame frame = new JFrame();
+	JFrame frameMI = new JFrame();
+	JTextField textfield = new JTextField();
+    
+    
+    public void MenuInicial() {
+    	   	
+    	
+    	
+    	
+    	
+    	
+    }
+    
+    
+
+
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+    
+    
+    
+    
+
+    
+}

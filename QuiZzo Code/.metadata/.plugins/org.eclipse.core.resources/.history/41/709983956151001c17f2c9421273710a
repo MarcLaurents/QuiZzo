@@ -1,0 +1,34 @@
+package QuiZzoInc;
+
+import QuiZzoInc.Quizzo;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		
+		
+		
+		Quizzo quizzo = new Quizzo();
+		CadastroJogador jogador1 = new CadastroJogador();
+		CadastroJogador jogador2 = new CadastroJogador();
+		quizzo.setoptMI();		
+		if(quizzo.getOptMI() == 0) {
+			
+			jogador1.setNomeJogador();
+			jogador2.setNomeJogador();
+			
+			jogador1.setPersonagemEscolhido(quizzo.EscolhaPersonagem());
+			jogador2.setPersonagemEscolhido(quizzo.EscolhaPersonagem());
+			Partida partida = new Partida(); // executa em janela .jar
+		}
+		if else {
+			
+		}
+		
+		
+		
+
+	}
+
+}

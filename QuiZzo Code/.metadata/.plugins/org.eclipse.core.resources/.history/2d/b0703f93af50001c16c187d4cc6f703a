@@ -1,0 +1,13 @@
+package QuiZzoInc;
+
+public class CadastroJogador {
+	
+	private String idCadastroJogador;
+	private String nomeJogador;
+	
+	public CadastroJogador(String idCadastroJogador, String nomeJogador) {
+		
+	}
+	
+	
+}

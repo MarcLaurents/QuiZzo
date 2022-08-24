@@ -1,0 +1,26 @@
+package QuiZzoInc;
+
+import QuiZzoInc.Quizzo;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		
+		
+		
+		Quizzo quizzo = new Quizzo();
+		
+		quizzo.X();
+		//quizzo.MenuInicial();
+		System.out.println(quizzo.getX());
+		//IMPLEMENTAR CONDICAO
+		//if(optMI.== 1) {
+			quizzo.MenuEscolhaPersonagem();
+		//}
+		
+		
+
+	}
+
+}

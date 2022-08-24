@@ -1,0 +1,18 @@
+package QuiZzoInc;
+
+import java.util.ArrayList;
+
+public class MenuEscolhaPersonagem {	
+
+	private String idEscolhaPersonagem;
+    private ArrayList<String> personagem;
+    
+    /*------------------------------------------------------------INICIO METODO CONSTRUTOR-------------------------------------------------------*/
+    public void MenuEscolhaPersonagem (String idEscolhaPersonagem, ArrayList<String> personagem) {
+    	
+    }    
+    
+    
+
+}
+
